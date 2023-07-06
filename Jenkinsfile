@@ -1,7 +1,9 @@
 pipeline {
     agent any
-
-            }
+    stages {
+        stage('Build') {
+            steps {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'e985edd7-67a2-4153-97aa-8c2c4e52f7ae', url: 'https://github.com/Bounzeback/projectray.git']])            }
         }
         stage('1-member1') {
             steps {
